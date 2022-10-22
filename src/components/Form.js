@@ -28,7 +28,8 @@ function Form() {
     const formData = new FormData();
     formData.append("image", file);
     const headers = {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://nodei2tapiclient.herokuapp.com',
+      'Access-Control-Allow-Methods': 'POST',
     }
     axios.post("https://nodei2tapi.herokuapp.com/upload", formData, {headers}).then((res) => {
       setText(res.data.text);
